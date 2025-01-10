@@ -1,44 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <script src="script.js" defer></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      input,
+      button {
+        font-family: "Space Mono", sans-serif;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header><img src="images/logo.svg" alt="logo"></header>
+    <main>
+      <section class="left">
+        <div class="input-group">
+          <label for="bill">Bill</label>
+          <input
+            type="number"
+            id="bill"
+            placeholder="0"
+            value="142.55"
+            min="0"
+          />
+        </div>
+        <div class="input-group">
+          <label class="mb-4" for="tip">Select Tip %</label>
+          <div class="tip-buttons">
+            <button data-tip="0.05">5%</button>
+            <button data-tip="0.10">10%</button>
+            <button class="active" data-tip="0.15">15%</button>
+            <button data-tip="0.25">25%</button>
+            <button data-tip="0.50">50%</button>
+            <input type="number" id="customTip" placeholder="Custom" min="0" />
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="flexing"><label for="people">Number of People</label><span id="errorPeople" class="error"></span></div>
+          <input
+            type="number"
+            id="people"
+            placeholder="Enter number of people"
+            min="1"
+            value="5"
+          />
+          
+        </div>
+      </section>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <section class="right">
+        <div class="result-group">
+          <div class="result-item">
+            <p>Tip Amount<br><span class="light"> / Person:</span></p>
+            <h1 id="tipAmount">0.00</h1>
+          </div>
+          <div class="result-item">
+            <p>Total<br><span class="light"> / Person:</span></p>
+            <h1 id="totalAmount">0.00</h1>
+          </div>
+        </div>
+        <button id="reset">RESET</button>
+      </section>
+    </main>
+  </body>
 </html>
