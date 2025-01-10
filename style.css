@@ -166,6 +166,7 @@ h1 {
   }
 
   .left {
+    height: auto;
     width: 411px;
     padding: 16px;
     padding-top: 13px;
